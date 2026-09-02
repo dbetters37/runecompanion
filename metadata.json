@@ -1,0 +1,8 @@
+{
+  "name": "Shaman Spirit",
+  "description": "Shaman-themed interactive animal spirit companion game where your animal spirit gains skills and XP through real-life actions, step tracking, AI logging, and Shaman Path tasks.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
