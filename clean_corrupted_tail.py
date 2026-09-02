@@ -1,20 +1,20 @@
-with open('app/src/main/java/com/example/viewmodel/PetViewModel.kt', 'r', encoding='utf-8') as f:
-    text = f.read()
+from pathlib import Path
 
-marker = 'val updatedContract = currentContract.copy(currentQty = newQty)'
-idx = text.find(marker)
-if idx != -1:
-    clean_prefix = text[:idx + len(marker)]
-    # complete the method progressSkillContract
-    clean_prefix += """
+path = Path("app/src/main/java/com/example/viewmodel/PetViewModel.kt")
+data = path.read_bytes()
+marker = b"val updatedContract = currentContract.copy(currentQty = newQty)"
+index = data.find(marker)
+
+if index == -1:
+    raise SystemExit("Marker not found")
+
+clean_prefix = data[: index + len(marker)]
+completion = b"""
         val updated = _contractsMap.value.toMutableMap()
         updated[skill] = updatedContract
         _contractsMap.value = updated
     }
 }
 """
-    with open('app/src/main/java/com/example/viewmodel/PetViewModel.kt', 'w', encoding='utf-8') as f:
-        f.write(clean_prefix)
-    print("Cleaned corrupted tail successfully!")
-else:
-    print("Marker not found!")
+path.write_bytes(clean_prefix + completion)
+print("Cleaned corrupted tail successfully!")
