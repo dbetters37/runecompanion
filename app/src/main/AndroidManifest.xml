@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" tools:ignore="ForegroundServicePermission" />
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-
-    <attribution android:tag="default" android:label="@string/app_name" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -22,9 +22,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
 
-        <property
-            android:name="android.app.PROPERTY_ATTRIBUTION_TAG_DEFAULT_ALLOW"
-            android:value="true" />
+        <service
+            android:name="com.example.data.service.EnvironmentPerceptionService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
+        <service
+            android:name="com.example.data.service.PetOverlayService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
 
         <activity
             android:name=".MainActivity"
@@ -37,42 +45,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <service
-            android:name="com.example.services.NotificationDismissListenerService"
-            android:label="RuneCompanion Notification Listener"
-            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.service.notification.NotificationListenerService" />
-            </intent-filter>
-        </service>
-
-        <service
-            android:name="com.example.services.FloatingPetOverlayService"
-            android:enabled="true"
-            android:exported="false"
-            android:foregroundServiceType="specialUse"
-            tools:ignore="ForegroundServiceType" />
-
-        <service
-            android:name="com.example.services.AfkCompanionBackgroundService"
-            android:enabled="true"
-            android:exported="false"
-            android:foregroundServiceType="specialUse"
-            tools:ignore="ForegroundServiceType" />
-
-        <receiver
-            android:name="com.example.widget.OsrsPetWidgetProvider"
-            android:exported="true"
-            android:label="OSRS Pet Companion Widget">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/osrs_pet_widget_info" />
-        </receiver>
     </application>
 
 </manifest>

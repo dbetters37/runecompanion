@@ -1,8 +1,6 @@
 {
-  "name": "Shaman Spirit",
-  "description": "Shaman-themed interactive animal spirit companion game where your animal spirit gains skills and XP through real-life actions, step tracking, AI logging, and Shaman Path tasks.",
+  "name": "Lifelong Pet",
+  "description": "A lifelong AI pet and mystic shaman companion that records your history into Google Drive text files, evolves its personality, and floats on app overlay.",
   "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

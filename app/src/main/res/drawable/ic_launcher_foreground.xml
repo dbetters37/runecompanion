@@ -1,61 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-
-    <!-- Outer Soft Emerald Leaf Glow -->
+    <!-- Shaman Mask / Spirit Head -->
     <path
-        android:fillColor="#332ECC71"
-        android:pathData="M54,20 C32,32 26,58 38,78 C48,88 60,88 70,78 C82,58 76,32 54,20 Z" />
-
-    <!-- Main Sacred Leaf Silhouette (Bright Emerald) -->
+        android:fillColor="#E0C3FC"
+        android:pathData="M54,28 C38,28 26,40 26,56 C26,72 38,82 54,82 C70,82 82,72 82,56 C82,40 70,28 54,28 Z" />
+    <!-- Mystic Crown / Shaman Horns -->
     <path
-        android:fillColor="#2ECC71"
-        android:pathData="M54,24 C36,35 30,58 40,74 C48,84 60,84 68,74 C78,58 72,35 54,24 Z" />
-
-    <!-- Inner Jade Leaf Layer -->
+        android:fillColor="#FFD700"
+        android:pathData="M54,16 L48,28 L60,28 Z M36,22 L34,32 L44,30 Z M72,22 L64,30 L74,32 Z" />
+    <!-- Glowing Eyes -->
     <path
-        android:fillColor="#27AE60"
-        android:pathData="M54,28 C40,38 35,58 43,71 C50,79 58,79 65,71 C73,58 68,38 54,28 Z" />
-
-    <!-- Central Golden Tree Trunk & Stem -->
+        android:fillColor="#00F5D4"
+        android:pathData="M42,52 A6,6 0 1,1 42,51.9 Z M66,52 A6,6 0 1,1 66,51.9 Z" />
+    <!-- Spirit Symbol Mark -->
     <path
-        android:fillColor="#FFD54F"
-        android:pathData="M52,82 L56,82 L56,42 C56,40 54,36 54,36 C54,36 52,40 52,42 Z" />
-
-    <!-- Branch Splatters / Veins (Golden Green) -->
+        android:fillColor="#805AD5"
+        android:pathData="M54,36 A4,4 0 1,1 54,35.9 Z" />
+    <!-- Cute Smile -->
     <path
-        android:fillColor="#A1887F"
-        android:pathData="M54,58 L64,48 L62,45 L54,53 Z" />
-    <path
-        android:fillColor="#A1887F"
-        android:pathData="M54,58 L44,48 L46,45 L54,53 Z" />
-    <path
-        android:fillColor="#FFD54F"
-        android:pathData="M54,68 L66,58 L64,55 L54,63 Z" />
-    <path
-        android:fillColor="#FFD54F"
-        android:pathData="M54,68 L42,58 L44,55 L54,63 Z" />
-
-    <!-- Glowing Nature Orbs / Life Nodes (Bright Lime & Jade) -->
-    <!-- Top Apex Orb -->
-    <path
-        android:fillColor="#AEEA00"
-        android:pathData="M54,30 A4,4 0 1,1 54,38 A4,4 0 1,1 54,30 Z" />
-
-    <!-- Left & Right Leaf Orbs -->
-    <path
-        android:fillColor="#00E676"
-        android:pathData="M40,50 A3.5,3.5 0 1,1 40,57 A3.5,3.5 0 1,1 40,50 Z" />
-    <path
-        android:fillColor="#00E676"
-        android:pathData="M68,50 A3.5,3.5 0 1,1 68,57 A3.5,3.5 0 1,1 68,50 Z" />
-
-    <!-- Water / Dew Droplet Accent -->
-    <path
-        android:fillColor="#00E5FF"
-        android:pathData="M54,42 C51,46 51,50 54,52 C57,50 57,46 54,42 Z" />
-
+        android:strokeColor="#5A2A82"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M48,66 Q54,72 60,66" />
 </vector>

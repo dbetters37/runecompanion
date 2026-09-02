@@ -14,7 +14,7 @@ android {
   compileSdk { version = release(36) { minorApiLevel = 1 } }
 
   defaultConfig {
-    applicationId = "com.aistudio.runepet.companion.vsbslr"
+    applicationId = "com.aistudio.lifelongpet.shaman"
     minSdk = 24
     targetSdk = 36
     versionCode = 1
@@ -57,8 +57,9 @@ android {
     buildConfig = true
   }
   testOptions { unitTests { isIncludeAndroidResources = true } }
-  lint {
-    abortOnError = false
+  dependenciesInfo {
+    includeInApk = false
+    includeInBundle = true
   }
 }
 
@@ -67,6 +68,7 @@ android {
 secrets {
   propertiesFileName = ".env"
   defaultPropertiesFileName = ".env.example"
+  ignoreList.add("FIREBASE_APPCHECK_DEBUG_TOKEN")
 }
 
 googleServices { missingGoogleServicesStrategy = MissingGoogleServicesStrategy.WARN }
@@ -76,7 +78,7 @@ googleServices { missingGoogleServicesStrategy = MissingGoogleServicesStrategy.W
 dependencies {
   implementation(platform(libs.androidx.compose.bom))
   implementation(platform(libs.firebase.bom))
-  implementation(libs.accompanist.permissions)
+  // implementation(libs.accompanist.permissions)
   implementation(libs.androidx.activity.compose)
   // implementation(libs.androidx.camera.camera2)
   // implementation(libs.androidx.camera.core)
@@ -96,7 +98,8 @@ dependencies {
   // implementation(libs.androidx.navigation.compose)
   implementation(libs.androidx.room.ktx)
   implementation(libs.androidx.room.runtime)
-  implementation(libs.coil.compose)
+  implementation(libs.androidx.work.runtime.ktx)
+  // implementation(libs.coil.compose)
   implementation(libs.converter.moshi)
   implementation(libs.firebase.ai)
   // Uncomment to use Firestore:

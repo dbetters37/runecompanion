@@ -22,6 +22,6 @@ dependencyResolutionManagement {
   }
 }
 
-rootProject.name = "RuneCompanion"
+rootProject.name = "Lifelong Pet"
 
 include(":app")
