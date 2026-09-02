@@ -26,7 +26,9 @@ jobs:
         run: sdkmanager "platform-tools" "platforms;android-36.1" "build-tools;36.0.0"
       - name: Repair and complete source
         run: |
-          python3 clean_corrupted_tail.py
+          head -n 10502 app/src/main/java/com/example/viewmodel/PetViewModel.kt > PetViewModel.fixed
+          printf '        return true\\n    }\\n}\\n' >> PetViewModel.fixed
+          mv PetViewModel.fixed app/src/main/java/com/example/viewmodel/PetViewModel.kt
           python3 append_missing_functions.py
       - name: Create debug signing key
         run: keytool -genkeypair -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -dname "CN=Android Debug,O=Android,C=US" -keyalg RSA -keysize 2048 -validity 10000
