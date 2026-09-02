@@ -24,11 +24,8 @@ jobs:
       - uses: android-actions/setup-android@v3
       - name: Install Android SDK
         run: sdkmanager "platform-tools" "platforms;android-36.1" "build-tools;36.0.0"
-      - name: Repair corrupted source tail
-        run: |
-          head -n 10502 app/src/main/java/com/example/viewmodel/PetViewModel.kt > PetViewModel.fixed
-          printf '        return true\n    }\n}\n' >> PetViewModel.fixed
-          mv PetViewModel.fixed app/src/main/java/com/example/viewmodel/PetViewModel.kt
+      - name: Reconstruct corrupted source
+        run: python3 reconstruct.py
       - name: Create debug signing key
         run: keytool -genkeypair -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -dname "CN=Android Debug,O=Android,C=US" -keyalg RSA -keysize 2048 -validity 10000
       - name: Build APK
